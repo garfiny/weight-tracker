@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Coding - Weight Tracker</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <div>
+        <h1 class="title">Weight Tracker</h1>
+        <p class="subtitle">Simple, beautiful, and focused — track your daily weight.</p>
+      </div>
+    </header>
+
+    <section class="layout">
+      <form id="createForm" class="card form-card">
+        <h2>Add entry</h2>
+        <div class="form-grid">
+          <label>
+            Date
+            <input id="date" type="date" required />
+          </label>
+          <label>
+            Weight (kg)
+            <input id="weight" type="number" step="0.1" required />
+          </label>
+          <label class="full">
+            Notes
+            <input id="notes" type="text" />
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Add entry</button>
+          <button type="button" id="refreshBtn" class="btn">Refresh</button>
+        </div>
+      </form>
+
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Entries</h2>
+        </div>
+        <div class="table-wrap">
+          <table id="entries" class="entries-table">
+            <thead>
+              <tr><th>Date</th><th>Weight (kg)</th><th>Notes</th><th>Actions</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="/static/js/app.js"></script>
+  </main>
+</body>
+</html>
